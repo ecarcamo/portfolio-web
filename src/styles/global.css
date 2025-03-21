@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@theme {
+  --color-primary: #303841;
+  --color-secondary: #3A4750 ;
+  --color-cian : #00ADB5;
+  --color-gray: #616877 ;
+
+    --font-poppins: Poppins, sans-serif;
+}

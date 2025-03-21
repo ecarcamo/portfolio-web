@@ -1,11 +1,53 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+
 <Layout>
-	<Welcome />
+  <div class="w-screen h-screen p-5">
+    <!-- 
+      Mobile first:
+      - grid-cols-1 -> una sola columna
+      - auto-rows-auto -> ajusta la altura automáticamente para cada fila
+      - order-* sin prefijo -> orden en móvil
+      
+      A partir de md:
+      - md:grid-cols-7 -> 7 columnas
+      - md:grid-rows-6 -> 6 filas
+      - md:order-* -> orden en escritorio
+      - md:col-span, md:row-span, etc.
+    -->
+    <div class="grid w-full h-full gap-4 grid-cols-1 auto-rows-auto md:grid-cols-7 md:grid-rows-6">
+
+      <!-- #1 -> En móvil será el 3er elemento, en md vuelve a ser el 1er -->
+      <div class="order-3 md:order-1 md:col-span-5 md:row-span-2 bg-secondary rounded-xl">
+        1
+      </div>
+
+      <!-- #2 -> En móvil será el 1er elemento, en md será el 2do -->
+      <div class="order-1 md:order-2 md:col-span-3 md:row-span-2 md:col-start-3 md:row-start-3 bg-secondary rounded-xl">
+        2
+      </div>
+
+      <!-- #3 -> En móvil será el 5to, en md será el 3ro -->
+      <div class="order-5 md:order-3 md:col-span-2 md:row-span-4 md:col-start-6 md:row-start-1 bg-secondary rounded-xl">
+        3
+      </div>
+
+      <!-- #4 -> En móvil será el 2do, en md será el 4to -->
+      <div class="order-2 md:order-4 md:col-span-5 md:row-span-2 md:col-start-3 md:row-start-5 bg-secondary rounded-xl">
+        4
+      </div>
+
+      <!-- #5 -> En móvil será el 4to, en md será el 5to -->
+      <div class="order-4 md:order-5 md:col-span-2 md:row-span-4 md:col-start-1 md:row-start-3 bg-secondary rounded-xl">
+        5
+      </div>
+
+    </div>
+  </div>
 </Layout>
+
